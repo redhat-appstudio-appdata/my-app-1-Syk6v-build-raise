@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: spring-petclinic-cboz
+  namespace: mdsaud-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:62eec6f549b9c2406a06f6c309df6fcae9ab8953b3ff40148839ea28c9a93fbf
+        name: my-java-springboot
+        resources: {}
+status: {}
