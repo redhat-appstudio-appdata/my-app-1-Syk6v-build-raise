@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: spring-petclinic-cboz
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:mdsaud-tenant-spring-petclinic-cboz
+      - image: quay.io/redhat-appstudio/user-workload@sha256:62eec6f549b9c2406a06f6c309df6fcae9ab8953b3ff40148839ea28c9a93fbf
         name: my-java-springboot
         ports:
         - containerPort: 8081
