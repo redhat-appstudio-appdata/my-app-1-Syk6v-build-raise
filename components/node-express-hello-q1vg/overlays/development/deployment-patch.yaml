@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: node-express-hello-q1vg
+  namespace: mdsaud-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:4addfcff9aef6e7867ebff73f28776799e246d9c824fbb87468a51b5eadbd43e
+        name: my-nodejs
+        resources: {}
+status: {}
