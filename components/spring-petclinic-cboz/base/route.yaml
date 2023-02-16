@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: spring-petclinic-cboz
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: spring-petclinic-cboz
+    app.kubernetes.io/part-of: my-app-1
+  name: spring-petclinic-cboz
+  namespace: mdsaud-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: spring-petclinic-cboz
+    weight: null
+status: {}

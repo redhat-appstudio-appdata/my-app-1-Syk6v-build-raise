@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: spring-petclinic-cboz
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: spring-petclinic-cboz
+    app.kubernetes.io/part-of: my-app-1
+  name: spring-petclinic-cboz
+  namespace: mdsaud-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-springboot-app
+      app.kubernetes.io/instance: spring-petclinic-cboz
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-springboot-app
+        app.kubernetes.io/instance: spring-petclinic-cboz
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:mdsaud-tenant-spring-petclinic-cboz
+        name: my-java-springboot
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 10m
+            memory: 180Mi
+status: {}
